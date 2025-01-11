@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escape Game Anniversaire</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="welcome" class="welcome">
+            <h1>Bienvenue à l'Escape Game Anniversaire ! 🎉</h1>
+            <p>Prêt à résoudre des énigmes pour découvrir la surprise d'anniversaire ?</p>
+            <button id="startButton" onclick="startGame()">Commencer</button>
+        </div>
+
+        <div id="game" class="hidden">
+            <h1>Escape Game Anniversaire 🎉</h1>
+            <div id="puzzle1" class="puzzle">
+                <h2>Énigme 1 : Le Mot de Passe</h2>
+                <p>Quel est le nom de votre gâteau d'anniversaire préféré ?</p>
+                <select id="answer1">
+                    <option value="" disabled selected>---------choisir----------</option>
+                    <option value="fraise">Gâteau à la fraise</option>
+                    <option value="vanille">Gâteau à la vanille</option>
+                    <option value="chocolat">Gâteau au chocolat</option>
+                    <option value="caramel">Gâteau au caramel</option>
+                </select>
+                <button onclick="checkAnswer1()">Vérifier</button>
+                <p id="result1" class="result"></p>
+            </div>            
+
+            <div id="puzzle2" class="puzzle hidden">
+                <h2>Énigme 2 : La Couleur</h2>
+                <p>Quelle est votre couleur préférée ?</p>
+                <select id="answer2">
+                    <option value="" disabled selected>---------choisir une couleur----------</option>
+                    <option value="rouge">Rouge</option>
+                    <option value="bleu">Bleu</option>
+                    <option value="jaune">Jaune</option>
+                    <option value="orange">Orange</option>
+                    <option value="vert">Vert</option>
+                </select>                
+                <button onclick="checkAnswer2()">Vérifier</button>
+                <p id="result2" class="result"></p>
+            </div>            
+
+            <div id="puzzle3" class="puzzle hidden">
+                <h2>Énigme 3 : Le Rébus</h2>
+                <p>Quel est l'indice caché dans le rébus ?</p>
+                <div class="birthday-photo-container">
+                    <img src="rebuss.png" alt="Rébus" class="birthday-photo" id="rebus">
+                </div>
+                <select id="answer3">
+                    <option value="" disabled selected>---------choisir----------</option>
+                    <option value="chat">Chat</option>
+                    <option value="arbre">Arbre</option>
+                    <option value="avion">Avion</option>
+                    <option value="chasse au trésor">Chasse au trésor</option>
+                    <option value="lune">Lune</option>
+                    <option value="océan">Océan</option>
+                    <option value="montagne">Montagne</option>
+                    <option value="plage">Plage</option>
+                    <option value="bibliothèque">Bibliothèque</option>
+                    <option value="étoile">Étoile</option>
+                </select>
+                <button onclick="checkAnswer3()">Vérifier</button>
+                <p id="result3" class="result"></p>
+            </div>
+            
+
+            <div id="puzzle4" class="puzzle hidden">
+                <h2>Énigme 4 : Collaboration</h2>
+                <p>Choisissez un mot pour déverrouiller le message secret (trouvez l'intrus):</p>
+                <select id="answer4">
+                    <option value="" disabled selected>---------choisir----------</option>
+                    <option value="bonbon">Bonbbon</option>
+                    <option value="gâteau">Gâteau</option>
+                    <option value="chocolat">Chaucolat</option>
+                    <option value="fête">Fêtte</option>
+                </select>
+                <button onclick="checkAnswer4()">Vérifier</button>
+                <p id="result4" class="result"></p>
+            </div>
+            
+
+            <div id="final" class="hidden">
+                <h2>Félicitations ! 🎊</h2>
+                <p>Vous avez résolu toutes les énigmes et accédé à la surprise d'anniversaire !</p>
+                <h3>Votre Score Final : <span id="finalScore"></span></h3>
+
+                <!-- Carte d'anniversaire affichée ici -->
+                <div class="birthday-card">
+                    <h1 class="title">🎉 Joyeux Anniversaire, Papa ! 🎉</h1>
+                    <p class="message">Papa, 40 ans et tu n'as pas changé ! 🥳 Profite de ton weekend d'anniversaire et sache que je suis super heureux de voyager avec toi. Bon anniversaire et plein de bonheur ! 🎂</p>
+                </div>
+
+                <div class="balloons">
+                    <div class="balloon red"></div>
+                    <div class="balloon blue"></div>
+                    <div class="balloon yellow"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

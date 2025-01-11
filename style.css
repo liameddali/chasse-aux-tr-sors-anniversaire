@@ -1,0 +1,207 @@
+/* Style général */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #FFDEE9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+.puzzle {
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.result {
+    margin-top: 10px;
+    font-weight: bold;
+    color: green;
+}
+
+.correct {
+    animation: correctAnswer 1s forwards;
+}
+
+@keyframes correctAnswer {
+    0% { background-color: #4CAF50; }
+    100% { background-color: transparent; }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+    }
+}
+
+/* Carte d'anniversaire */
+.birthday-card {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+/* Titres et messages */
+.title {
+    font-size: 2.5em;
+}
+
+.message {
+    font-size: 1.5em;
+    margin: 20px 0;
+}
+
+/* Style de bienvenue */
+.welcome {
+    text-align: center;
+}
+
+.birthday-photo-container {
+    position: relative; /* Pour positionner la décoration */
+    display: inline-block; /* Pour que la décoration entoure l'image */
+}
+
+.birthday-photo {
+    width: 300px; /* Limiter la largeur de l'image */
+    height: auto; /* Garder les proportions de l'image */
+    border-radius: 15px; /* Arrondir les bords de l'image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre pour donner du relief */
+}
+
+.birthday-photo-container::before {
+    content: ""; /* Utilisé pour ajouter la décoration */
+    position: absolute;
+    top: -10px; /* Ajustez la position selon votre design */
+    left: -10px; /* Ajustez la position selon votre design */
+    right: -10px; /* Ajustez la position selon votre design */
+    bottom: -10px; /* Ajustez la position selon votre design */
+    background: url('decorations.png') no-repeat center center; /* Image de décoration */
+    background-size: cover; /* Ajuste la taille de la décoration */
+    border-radius: 25px; /* Arrondir les bords de la décoration */
+    z-index: -1; /* Positionner derrière l'image */
+}
+
+/* Conteneur des ballons */
+.balloons {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* Ballons ronds */
+.balloon {
+    width: 50px; /* Largeur du ballon */
+    height: 50px; /* Hauteur égale à la largeur pour avoir une forme ronde */
+    border-radius: 50%; /* Bordure arrondie pour avoir un cercle parfait */
+    position: relative;
+    margin: 0 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Styles des ballons */
+.balloon.red {
+    background-color: #FF5555;
+    animation-delay: 0s; /* Délai d'animation pour le ballon rouge */
+}
+
+.balloon.blue {
+    background-color: #5555FF;
+    animation-delay: 1s; /* Délai d'animation pour le ballon bleu */
+}
+
+.balloon.yellow {
+    background-color: #FFDD55;
+    animation-delay: 2s; /* Délai d'animation pour le ballon jaune */
+}
+
+/* Ajout de détails visuels */
+.balloon::before, .balloon::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
+
+.balloon::before {
+    width: 15px;
+    height: 15px;
+    background-color: rgba(255, 255, 255, 0.8);
+    top: 5px;
+    left: 15px;
+}
+
+.balloon::after {
+    width: 5px;
+    height: 10px;
+    background-color: #333;
+    bottom: -10px;
+    left: 22px;
+}
+
+/* Animation de flottement */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-30px); } /* Le ballon monte de 30px */
+    100% { transform: translateY(0); }
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Thèmes personnalisés */
+body.light-theme {
+    --background-color: #FFDEE9;
+    --text-color: #333;
+    --btn-color: #FF007F;
+}
+
+body.dark-theme {
+    --background-color: #333;
+    --text-color: #FFF;
+    --btn-color: #FF5555;
+}
+
+body.festive-theme {
+    --background-color: #FFFFE0;
+    --text-color: #FF6347;
+    --btn-color: #32CD32;
+}
+
+/* Design responsive */
+@media (max-width: 600px) {
+    .container, .form-container {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .balloon {
+        width: 30px;
+        height: 30px; /* Taille réduite des ballons sur petit écran */
+    }
+}
